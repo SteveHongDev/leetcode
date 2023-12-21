@@ -1,12 +1,13 @@
 class Solution {
     func maxWidthOfVerticalArea(_ points: [[Int]]) -> Int {
-        var xList = points.map { $0[0] }.sorted()
+        var sortedList = points.sorted { $0[0] < $1[0] }
         var result = 0
-        for index in 0..<xList.count {
-            guard (index != xList.count - 1) else { break }
+        for index in 0..<sortedList.count {
+            guard (index != sortedList.count - 1) else { break }
 
-            if (xList[index+1] - xList[index] > result) {
-                result = xList[index+1] - xList[index]
+            let tmp = sortedList[index+1][0] - sortedList[index][0]
+            if (tmp > result) {
+                result = tmp
             }
         }
         
