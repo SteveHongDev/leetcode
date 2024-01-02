@@ -4,8 +4,9 @@ class Solution {
             return false
         } else {
             let arr = "\(x)".split(separator: "")
-            for i in 0 ..< arr.count / 2 {
-                if arr[i] == arr[arr.count - 1 - i] {
+            let length = arr.count
+            for i in 0 ..< length / 2 {
+                if arr[i] == arr[length - 1 - i] {
                     continue
                 } else {
                     return false
