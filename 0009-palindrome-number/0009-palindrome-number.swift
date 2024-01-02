@@ -3,10 +3,10 @@ class Solution {
         if x < 0 {
             return false
         } else {
-            let arr = "\(x)".split(separator: "")
-            let length = arr.count
+            let str = "\(x)"
+            let length = str.count
             for i in 0 ..< length / 2 {
-                if arr[i] == arr[length - 1 - i] {
+                if str[str.index(str.startIndex, offsetBy: i)] == str[str.index(str.endIndex, offsetBy: -1 - i)] {
                     continue
                 } else {
                     return false
